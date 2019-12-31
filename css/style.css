@@ -832,8 +832,67 @@ div#preloader {
 
 .logo-curso {
   height: 150px;
+  width: 150px;
 }
 
+.iconeImagem {
+  height: 50px;
+  width: 50px;
+}
+
+.agrupadorImagem:hover{
+  border-color: cadetblue;
+  border-width: 1px;
+  border-style: outset;
+}
+
+.slideFotoGrande {
+  text-align: center;
+  font-size: 40px;
+  line-height: 400px; 
+}
+.slideFotoGrande a {
+  color: #c3872f;
+}
+.slideFotoGrande a:hover {
+  color: #c3872fb0;
+}
+
+.dadosEmp {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.dadosEmp label {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.contatoDetEmp {
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+.contatoDetEmp a {
+  color: white;
+  border-radius: 5px;  
+}
+
+.contatoDetEmp a:hover {
+  color: blue !important;
+  border-radius: 5px;  
+}
+
+.dadosEmp b {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.precoEmpilhadeira {
+  font-size: 30px;
+  margin-top: 25px;
+  color: rgb(102, 102, 102);
+}
 /*----------------------------------------
  .End CSS
 ----------------------------------------*/
