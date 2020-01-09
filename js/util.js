@@ -75,18 +75,22 @@ function moverFoto (ind) {
 var modeloFotoLateral = '               <a onclick="aplicarFotoGrande(numeroFoto)" href="#"> ' +
 ' <img class="iconeImagem" src="img/Empilhadeiras/pastaFoto/numeroFoto.jpeg"/><br> </a>' 
 
-var modelo = '            <div class="col-md-4 col-sm-4 col-xs-12">' +
-'<div class="about-move">' +
-  ' <div class="services-details"> ' +
-  '   <div class="single-services">' +
-   '   <a onclick="abrirEmpilhadeira(idEmpilhadeira)" class="services-icon" href="#services">' +
-   '       <img class="logo-curso" src="img/Empilhadeiras/pastaEmpilhadeira/principal.jpeg">' +
-    '    </a>' +
-    '  <h4>nomeEmpilhadeira</h4>' +
- '   </div>' +
-'  </div> ' +
-' </div>' +
-' </div>';
+var modelo = '<div class="row"> ' +
+'	<a style="width: 100%;" onclick="abrirEmpilhadeira(idEmpilhadeira)" class="services-icon" href="#services">' +
+'	<div class="col-md-3" aling="center">' +
+ '         <img class="logo-curso" src="img/Empilhadeiras/pastaEmpilhadeira/principal.jpeg"> ' +
+'	</div>' +
+'	<div class="col-md-5" align="left">' +
+ '         <h3>nomeEmpilhadeira</h3>' +
+'	</div>' +
+'	<div class="col-md-2">' +
+'	  <h4>valorEmpilhadeira</h4>' +
+'	</div>' +
+'	<div class="col-md-2">' +
+'	  <h4>anoEmpilhadeira</h4> ' +
+'	</div>' +
+'   </a>' +
+ '</div>';
 
 function montarHtmlEstoque () {
     var html = "";
@@ -95,6 +99,8 @@ function montarHtmlEstoque () {
         novo = novo.replace("pastaEmpilhadeira", empilhadeira.pasta);
         novo = novo.replace("nomeEmpilhadeira", empilhadeira.nome);
         novo = novo.replace("idEmpilhadeira", empilhadeira.id);
+        novo = novo.replace("anoEmpilhadeira", empilhadeira.ano);
+        novo = novo.replace("valorEmpilhadeira", empilhadeira.valor);
         html = html + novo;
     });
     document.getElementById("empilhadeiras").innerHTML = html;
