@@ -613,9 +613,10 @@ div#preloader {
 }
 
 .single-icon i {
-  font-size: 24px;
+  font-size: 36px;
   width: 50px;
   height: 50px;
+  color: black;
   border: 1px solid #444;
   line-height: 46px;
   border-radius: 50%;
@@ -740,7 +741,7 @@ div#preloader {
 }
 
 .footer-area-bottom {
-  background: #f1f1f1 none repeat scroll 0 0;
+  background: rgba(232, 188, 51, 0.8) none repeat scroll 0 0;
   padding: 15px 0;
 }
 
@@ -829,10 +830,23 @@ div#preloader {
   display: table-cell;
   vertical-align: middle;
 }
+.iconerede {
+  color: white !important;
+  font-size: 35px;
+  padding-left: 10px;
+}
+.iconerede:hover {
+  color: blue !important;
+  padding-left: 10px;
+}
 
 .logo-curso {
   height: 150px;
   width: 150px;
+}
+
+.dadoEmp {
+  line-height: 150px;
 }
 
 .iconeImagem {
@@ -888,10 +902,20 @@ div#preloader {
   font-weight: bold;
 }
 
+.itemEstoque a{
+  background-color: #ded7d7;
+}
+
 .precoEmpilhadeira {
   font-size: 30px;
   margin-top: 25px;
   color: rgb(102, 102, 102);
+}
+
+.nomeALTA {
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
 }
 /*----------------------------------------
  .End CSS

@@ -12,7 +12,9 @@ function abrirEmpilhadeira (id) {
         return img.id == id;
     });
     document.getElementById("empilhadeiras").style.display = "none";
+    document.getElementById("tituloGrid").style.display = "none";
     document.getElementById("detalheEmpilhadeira").style.display = "block";
+    document.getElementById("imageBak").style.display = "block";
     lerFotos();
     aplicarFotoGrande(null);
     buscarDadosEmpilhadeira();
@@ -24,14 +26,24 @@ function buscarDadosEmpilhadeira () {
     detalhadoEmpilhadeira = detalhadoEmpilhadeira.replace("anoEmpilhadeira", empilhadeiraSelecionada.ano);
     detalhadoEmpilhadeira = detalhadoEmpilhadeira.replace("capacidadeEmpilhadeira", empilhadeiraSelecionada.capacidade);
     detalhadoEmpilhadeira = detalhadoEmpilhadeira.replace("torreEmpilhadeira", empilhadeiraSelecionada.torre);
+    detalhadoEmpilhadeira = detalhadoEmpilhadeira.replace("combEmpilhadeira", empilhadeiraSelecionada.comb);
+    detalhadoEmpilhadeira = detalhadoEmpilhadeira.replace("marcaEmpilhadeira", empilhadeiraSelecionada.marca);
     detalhadoEmpilhadeira = detalhadoEmpilhadeira.replace("observacaoEmpilhadeira", empilhadeiraSelecionada.observacao);
     detalhadoEmpilhadeira = detalhadoEmpilhadeira.replace("valorEmpilhadeira", empilhadeiraSelecionada.valor);
     document.getElementById("dadosEmpilhadeira").innerHTML = detalhadoEmpilhadeira;
 }
 
+function openInNewTab(url) {
+    console.log(url);
+    var win = window.open(url, '_blank');
+    win.focus();
+  }
+
 function voltarEmpilhadeiras () {
     document.getElementById("empilhadeiras").style.display = "block";
+    document.getElementById("tituloGrid").style.display = "block";
     document.getElementById("detalheEmpilhadeira").style.display = "none";  
+    document.getElementById("imageBak").style.display = "none";
 }
 
 function lerFotos() {
@@ -75,19 +87,25 @@ function moverFoto (ind) {
 var modeloFotoLateral = '               <a onclick="aplicarFotoGrande(numeroFoto)" href="#"> ' +
 ' <img class="iconeImagem" src="img/Empilhadeiras/pastaFoto/numeroFoto.jpeg"/><br> </a>' 
 
-var modelo = '<div class="row"> ' +
+var modelo = '<div class="row itemEstoque"> ' +
 '	<a style="width: 100%;" onclick="abrirEmpilhadeira(idEmpilhadeira)" class="services-icon" href="#services">' +
 '	<div class="col-md-3" aling="center">' +
  '         <img class="logo-curso" src="img/Empilhadeiras/pastaEmpilhadeira/principal.jpeg"> ' +
 '	</div>' +
-'	<div class="col-md-5" align="left">' +
- '         <h3>nomeEmpilhadeira</h3>' +
+'	<div class="col-md-2" style="height: 150px" align="left">' +
+'      <h4 class="dadoEmp">nomeEmpilhadeira</h4>' +
 '	</div>' +
-'	<div class="col-md-2">' +
-'	  <h4>valorEmpilhadeira</h4>' +
+'	<div class="col-md-2" style="height: 150px" >' +
+'     <h4 class="dadoEmp">marcaEmpilhadeira</h4>' +
 '	</div>' +
-'	<div class="col-md-2">' +
-'	  <h4>anoEmpilhadeira</h4> ' +
+'	<div class="col-md-2" style="height: 150px">' +
+'	  <h4 class="dadoEmp"> anoEmpilhadeira</h4>' +
+'	</div>' +
+'	<div class="col-md-2" style="height: 150px">' +
+'	  <h4 class="dadoEmp">capacidadeEmpilhadeira</h4> ' +
+'	</div>' +
+'	<div class="col-md-1" style="height: 150px">' +
+'	  <img class="dadoEmp" style="height: 60px; margin-top: 50px" src="img/saiba mais.png"/> ' +
 '	</div>' +
 '   </a>' +
  '</div>';
@@ -100,7 +118,9 @@ function montarHtmlEstoque () {
         novo = novo.replace("nomeEmpilhadeira", empilhadeira.nome);
         novo = novo.replace("idEmpilhadeira", empilhadeira.id);
         novo = novo.replace("anoEmpilhadeira", empilhadeira.ano);
-        novo = novo.replace("valorEmpilhadeira", empilhadeira.valor);
+        novo = novo.replace("marcaEmpilhadeira", empilhadeira.marca);
+        novo = novo.replace("capacidadeEmpilhadeira", empilhadeira.capacidade);
+
         html = html + novo;
     });
     document.getElementById("empilhadeiras").innerHTML = html;
@@ -111,6 +131,9 @@ var modeloDadosEmpilhadeira = '              <div class="row">' +
 '  <h3>nomeEmpilhadeira</h3>' +
 '  </div>' +
 '  <div class="row dadosEmp">' +
+'  <label><b>Marca:</b> marcaEmpilhadeira</label>' +
+'  </div>' +
+'  <div class="row dadosEmp">' +
 '  <label><b>Ano:</b> anoEmpilhadeira</label>' +
 '  </div>' +
 '  <div class="row dadosEmp">' +
@@ -118,6 +141,9 @@ var modeloDadosEmpilhadeira = '              <div class="row">' +
 '  </div>' +
 '  <div class="row dadosEmp">' +
 '  <label><b>Torre:</b> torreEmpilhadeira</label>' +
+'  </div>' +
+'  <div class="row dadosEmp">' +
+'  <label><b>Comb.:</b> combEmpilhadeira</label>' +
 '  </div>' +
 '  <div class="row dadosEmp">' +
 '  <label><b>Observação:</b> observacaoEmpilhadeira</label>' +
